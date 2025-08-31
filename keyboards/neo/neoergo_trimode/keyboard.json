@@ -75,7 +75,8 @@
             "cycle_pinwheel": true,
             "cycle_spiral": true,
             "dual_beacon": true,
-            "rainbow_beacon": true
+            "rainbow_beacon": true,
+            "heatmap": true
         },
         "layout": [
             { "flags": 8, "x":  43, "y": 8 },
