@@ -32,7 +32,8 @@
         "deferred_exec": true,
         "extrakey": true,
         "mousekey": true,
-        "nkro": true
+        "nkro": true,
+        "macros": true
     },
     "tapping": {
         "term_per_key": true

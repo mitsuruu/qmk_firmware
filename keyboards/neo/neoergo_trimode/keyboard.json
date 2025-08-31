@@ -35,7 +35,8 @@
         "nkro": true,
         "haptic": false,
         "rgb_light": false,
-        "rgb_matrix": true
+        "rgb_matrix": true,
+        "macros": true
     },
     "tapping": {
         "term_per_key": true
