@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-#include "classic.h"
+#include "quantum.h"
 #include "eeconfig.h"
 
 extern uint16_t actuation_point[MATRIX_COLS][MATRIX_ROWS];
