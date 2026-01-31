@@ -12,10 +12,5 @@ RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 SLEEP_LED_ENABLE = no
 
-
-DEFAULT_FOLDER = vertex/arc60_uf2
-
-
-
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
