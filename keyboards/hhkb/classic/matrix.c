@@ -16,6 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "gpio.h"
 #include "quantum.h"
 
 #ifdef DEBUG_ADC
@@ -71,19 +72,19 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
     pal_lld_setport(GPIOB, 0x407);
 
     // power switch board
-    writePinHigh(C14);
-    /* writePinLow(D2); */
+    gpio_write_pin_high(C14);
+    /* gpio_write_pin_low(D2); */
 
     // enable OpAmp
-    writePinHigh(C7);
+    gpio_write_pin_high(C7);
 
-    writePinHigh(C6); // U1
-    writePinLow(B15); // U2
+    gpio_write_pin_high(C6); // U1
+    gpio_write_pin_low(B15); // U2
 
     for (uint8_t col = 0; col < MATRIX_COLS; col++) {
         if (col == 8) {
-            writePinLow(C6);   // U1
-            writePinHigh(B15); // U2
+            gpio_write_pin_low(C6);   // U1
+            gpio_write_pin_high(B15); // U2
         }
         GPIOB->BSRR.W = col_select[col];
         for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
@@ -92,9 +93,9 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
 
             wait_us(2);
             // Discharge capacitor
-            writePinHigh(C8);
+            gpio_write_pin_high(C8);
             wait_us(2);
-            writePinLow(C8);
+            gpio_write_pin_low(C8);
 
             pal_lld_clearport(GPIOB, row_select[row]);
             wait_us(2);
@@ -125,7 +126,7 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
         }
     }
     // Disable OpAmp
-    writePinLow(C7);
+    gpio_write_pin_low(C7);
 
     return matrix_has_changed;
 }

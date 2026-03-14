@@ -6,54 +6,54 @@ extern uint16_t actuation_point[MATRIX_COLS][MATRIX_ROWS];
 
 void keyboard_pre_init_kb(void) {
     /* debug_enable=true; */
-    setPinInput(C4);
-    setPinOutputPushPull(C6);
-    setPinOutputPushPull(C7);
-    setPinOutputPushPull(C8);
-    setPinOutputPushPull(C9);
-    setPinOutputPushPull(C14);
-    setPinInput(A3);
-    setPinInput(A4);
-    setPinInput(A5);
-    setPinInput(A6);
-    setPinInput(A7);
-    setPinInput(A10);
-    setPinOutputPushPull(B0);
-    setPinOutputPushPull(B1);
-    setPinOutputPushPull(B2);
-    setPinOutputPushPull(B6);
-    setPinOutputPushPull(B10);
-    setPinOutputPushPull(B11);
-    setPinOutputPushPull(B12);
-    setPinOutputPushPull(B13);
-    setPinOutputPushPull(B14);
-    setPinOutputPushPull(B15);
-    setPinOutputPushPull(A8);
-    setPinOutputPushPull(A9);
-    setPinOutputPushPull(D2);
-    setPinInput(B7);
-    setPinInput(B8);
-    setPinInput(B9);
-    setPinOutputPushPull(B3);
-    setPinOutputPushPull(B4);
-    setPinOutputPushPull(B5);
-    setPinOutputPushPull(B6);
-    setPinOutputPushPull(A15);
+    gpio_set_pin_input(C4);
+    gpio_set_pin_output_push_pull(C6);
+    gpio_set_pin_output_push_pull(C7);
+    gpio_set_pin_output_push_pull(C8);
+    gpio_set_pin_output_push_pull(C9);
+    gpio_set_pin_output_push_pull(C14);
+    gpio_set_pin_input(A3);
+    gpio_set_pin_input(A4);
+    gpio_set_pin_input(A5);
+    gpio_set_pin_input(A6);
+    gpio_set_pin_input(A7);
+    gpio_set_pin_input(A10);
+    gpio_set_pin_output_push_pull(B0);
+    gpio_set_pin_output_push_pull(B1);
+    gpio_set_pin_output_push_pull(B2);
+    gpio_set_pin_output_push_pull(B6);
+    gpio_set_pin_output_push_pull(B10);
+    gpio_set_pin_output_push_pull(B11);
+    gpio_set_pin_output_push_pull(B12);
+    gpio_set_pin_output_push_pull(B13);
+    gpio_set_pin_output_push_pull(B14);
+    gpio_set_pin_output_push_pull(B15);
+    gpio_set_pin_output_push_pull(A8);
+    gpio_set_pin_output_push_pull(A9);
+    gpio_set_pin_output_push_pull(D2);
+    gpio_set_pin_input(B7);
+    gpio_set_pin_input(B8);
+    gpio_set_pin_input(B9);
+    gpio_set_pin_output_push_pull(B3);
+    gpio_set_pin_output_push_pull(B4);
+    gpio_set_pin_output_push_pull(B5);
+    gpio_set_pin_output_push_pull(B6);
+    gpio_set_pin_output_push_pull(A15);
 
     // leds
-    writePinLow(A8);
-    writePinLow(A9);
+    gpio_write_pin_low(A8);
+    gpio_write_pin_low(A9);
 
     // bluetooth board?
-    writePinHigh(A15);
-    writePinHigh(B3);
-    writePinHigh(B4);
-    writePinHigh(B5);
-    writePinHigh(B6);
+    gpio_write_pin_high(A15);
+    gpio_write_pin_high(B3);
+    gpio_write_pin_high(B4);
+    gpio_write_pin_high(B5);
+    gpio_write_pin_high(B6);
     //
-    writePinHigh(C14);
-    writePinHigh(C7);
-    writePinHigh(B6);
+    gpio_write_pin_high(C14);
+    gpio_write_pin_high(C7);
+    gpio_write_pin_high(B6);
 
     palSetLineMode(A1, PAL_MODE_INPUT_ANALOG);
     /* rccResetADC1(); */
