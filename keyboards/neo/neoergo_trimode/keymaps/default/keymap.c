@@ -10,6 +10,11 @@ enum layers {
     MAC_FN,
 };
 
+#define LT_BT1 LT(0, KC_BT1)
+#define LT_BT2 LT(0, KC_BT2)
+#define LT_BT3 LT(0, KC_BT3)
+#define LT_2G4 LT(0, KC_2G4)
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [WIN_B] = LAYOUT(
@@ -21,10 +26,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [WIN_FN] = LAYOUT(
-        EE_CLR, KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______,
-        _______, KC_NXT, LT(0, KC_BT1), LT(0, KC_BT2), LT(0, KC_BT3), LT(0, KC_2G4), _______, _______, KC_USB, _______, _______, _______, _______, _______, _______,
+        EE_CLR,  KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______,
+        _______, KC_NXT,  LT_BT1,  LT_BT2,  LT_BT3,  LT_2G4,  _______, _______, KC_USB,  _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        _______, _______, _______, RGB_TOG, RGB_MOD, RGB_RMOD,RGB_HUI, RGB_HUD, RGB_HUD, RGB_SPI, RGB_SPD, RGB_VAI, RGB_VAD, _______, _______, _______,
+        _______, _______, _______, RM_TOGG, RM_NEXT, RM_PREV, RM_HUEU, RM_HUED, RM_HUED, RM_SPDU, RM_SPDD, RM_VALU, RM_VALD, _______, _______, _______,
                  _______,TO(MAC_B),                           _______, _______, _______, _______,                            _______, _______, _______
     ),
 
